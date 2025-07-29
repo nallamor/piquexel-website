@@ -1,6 +1,7 @@
 // PIQUEXEL WEBSITE – Final Build with All Pages
 
-import React from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import heroImg from "./assets/images/page_1_img_1.jpeg";
 import curatorialHouse from "./assets/images/page_5_img_1.jpeg";
@@ -13,20 +14,47 @@ import adminProject from "./assets/images/page_4_img_3.jpeg";
 import contactBg from "./assets/images/page_6_img_1.jpeg";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav className="bg-white shadow sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-gray-800">PIQUEXEL</Link>
-        <div className="space-x-4 hidden md:flex">
+
+        {/* Desktop Links */}
+        <div className="space-x-6 hidden md:flex">
           <Link to="/about" className="text-gray-700 hover:text-black">About</Link>
           <Link to="/services" className="text-gray-700 hover:text-black">Services</Link>
           <Link to="/projects" className="text-gray-700 hover:text-black">Projects</Link>
           <Link to="/contact" className="text-gray-700 hover:text-black">Contact</Link>
         </div>
+
+        {/* Hamburger icon on mobile */}
+        <button className="md:hidden focus:outline-none" onClick={toggleMenu}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Slide-in Mobile Menu */}
+      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="p-6 flex flex-col gap-6">
+          <button className="self-end mb-4" onClick={closeMenu}>
+            <X size={24} />
+          </button>
+          <Link to="/about" onClick={closeMenu} className="text-gray-800 hover:text-black">About</Link>
+          <Link to="/services" onClick={closeMenu} className="text-gray-800 hover:text-black">Services</Link>
+          <Link to="/projects" onClick={closeMenu} className="text-gray-800 hover:text-black">Projects</Link>
+          <Link to="/contact" onClick={closeMenu} className="text-gray-800 hover:text-black">Contact</Link>
+        </div>
       </div>
     </nav>
   );
 }
+
+export default Navbar;
 
 function HomePage() {
   return (
