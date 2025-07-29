@@ -1,5 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import heroImg from "./assets/images/page_1_img_1.jpeg";
+import curatorialHouse from "./assets/images/page_5_img_1.jpeg";
+import vueMer from "./assets/images/page_5_img_2.jpeg";
+import g21Residences from "./assets/images/page_5_img_3.jpeg";
 
 function HomePage() {
   return (
