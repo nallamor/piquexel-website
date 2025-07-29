@@ -7,7 +7,7 @@ import heroImg from "./assets/images/page_1_img_1.jpeg";
 import curatorialHouse from "./assets/images/page_5_img_1.jpeg";
 import vueMer from "./assets/images/page_5_img_2.jpeg";
 import g21Residences from "./assets/images/page_5_img_2.jpeg";
-import interiorConcepts from "./assets/images/page_3_img_1.jpeg";
+import interiorConcepts from "./assets/images/page_2_img_1.jpeg";
 import buildingDesigns from "./assets/images/page_4_img_1.jpeg";
 import urbanPlanning from "./assets/images/page_4_img_2.jpeg";
 import adminProject from "./assets/images/page_4_img_3.jpeg";
