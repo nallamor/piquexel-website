@@ -54,8 +54,6 @@ function Navbar() {
   );
 }
 
-export default Navbar;
-
 function HomePage() {
   return (
     <div className="bg-white text-gray-900 font-sans">
